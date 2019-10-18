@@ -1,0 +1,635 @@
+<html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Formulários Yazaki</title>
+      <meta name="description" content="Source code generated using layoutit.com">
+      <meta name="author" content="LayoutIt!">
+      <link href="/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/style.css" rel="stylesheet">
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/formcache.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/scripts.js"></script>
+    </head>
+  </html>
+  <body style="margin:0px;padding:0px;align:center" onload="carregar()">
+    <form class="form-horizontal" action="../api/envio.php" method="post" name="f1">
+      <fieldset>
+        <legend>Main Teste</legend>
+        <input type="hidden" id="Main Teste" name="titulo" value="Main_Teste" />
+        <div class="form-group">
+          <label for="dep_auditor" class="col-md-4 control-label">Departamento do Auditor</label>
+          <div class="col-md-4">
+            <input id="dep_auditor" name="dep_auditor" type="text" placeholder="dep_auditor" class="form-control input-md" required="" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="auditor" class="col-md-4 control-label">Auditor</label>
+          <div class="col-md-4">
+            <input id="auditor" name="auditor" type="text" placeholder="auditor" class="form-control input-md" required="" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="local" class="col-md-4 control-label">Linha/Local</label>
+          <div class="col-md-4">
+            <input id="local" name="local" type="text" placeholder="local" class="form-control input-md" required="" />
+          </div>
+        </div>
+        <hr />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <legend>Itens Comuns e Gerais</legend>
+        <div class="form-group">
+          <label for="var1" class="col-md-4 control-label">Portas ou janelas de áreas produtivas são mantidas fechadas, evitando assim entrada de poeira e animais. Utilize cortinas caso às portas sejam mantidas abertas.</label>
+          <div class="col-md-4">
+            <label for="var1-0" class="radio-inline">
+              <input type="radio" name="var1" id="var1-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var1-1" class="radio-inline">
+              <input type="radio" name="var1" id="var1-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var1-2" class="radio-inline">
+              <input type="radio" name="var1" id="var1-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var1-desc">
+              <input id="var1-desc" name="var1-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var2" class="col-md-4 control-label">Fiação, tubulações e tomadas, mesmo que temporárias, estão em boas condições, fixadas e protegidas, não se tornando um obstáculo (tomadas devem estar fixadas na parede ou pilar).</label>
+          <div class="col-md-4">
+            <label for="var2-0" class="radio-inline">
+              <input type="radio" name="var2" id="var2-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var2-1" class="radio-inline">
+              <input type="radio" name="var2" id="var2-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var2-2" class="radio-inline">
+              <input type="radio" name="var2" id="var2-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var2-desc">
+              <input id="var2-desc" name="var2-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var3" class="col-md-4 control-label">Utilização dos sapatos do uniforme dentro da área produtiva ou remoção de sujeira dos calçados nos tapetes das entradas.</label>
+          <div class="col-md-4">
+            <label for="var3-0" class="radio-inline">
+              <input type="radio" name="var3" id="var3-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var3-1" class="radio-inline">
+              <input type="radio" name="var3" id="var3-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var3-2" class="radio-inline">
+              <input type="radio" name="var3" id="var3-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var3-desc">
+              <input id="var3-desc" name="var3-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var4" class="col-md-4 control-label">Nome das linhas, processos e máquinas são indicadas claramente (informações devem constar também no layout da planta)</label>
+          <div class="col-md-4">
+            <label for="var4-0" class="radio-inline">
+              <input type="radio" name="var4" id="var4-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var4-1" class="radio-inline">
+              <input type="radio" name="var4" id="var4-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var4-2" class="radio-inline">
+              <input type="radio" name="var4" id="var4-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var4-desc">
+              <input id="var4-desc" name="var4-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var5" class="col-md-4 control-label">Os documentos necessários (combinação de trabalho padrão, instrução de operação, etc.) estão disponíveis e de fácil visualização para o operador, caso necessitem ser consultados.</label>
+          <div class="col-md-4">
+            <label for="var5-0" class="radio-inline">
+              <input type="radio" name="var5" id="var5-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var5-1" class="radio-inline">
+              <input type="radio" name="var5" id="var5-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var5-2" class="radio-inline">
+              <input type="radio" name="var5" id="var5-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var5-desc">
+              <input id="var5-desc" name="var5-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var6" class="col-md-4 control-label"> Área de operação e corredores estão seguros para a circulação.</label>
+          <div class="col-md-4">
+            <label for="var6-0" class="radio-inline">
+              <input type="radio" name="var6" id="var6-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var6-1" class="radio-inline">
+              <input type="radio" name="var6" id="var6-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var6-2" class="radio-inline">
+              <input type="radio" name="var6" id="var6-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var6-desc">
+              <input id="var6-desc" name="var6-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var7" class="col-md-4 control-label">Luz suficiente é fornecida na área de operação. (área de operação: mais de 300 lux, armazém: mais de 75 lux) *Certifique-se de cumprir o regulamento para cada país.</label>
+          <div class="col-md-4">
+            <label for="var7-0" class="radio-inline">
+              <input type="radio" name="var7" id="var7-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var7-1" class="radio-inline">
+              <input type="radio" name="var7" id="var7-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var7-2" class="radio-inline">
+              <input type="radio" name="var7" id="var7-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var7-desc">
+              <input id="var7-desc" name="var7-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var8" class="col-md-4 control-label">Peças e produtos são protegidos da luz solar direta. (ex. Use vidro opaco ou persianas)</label>
+          <div class="col-md-4">
+            <label for="var8-0" class="radio-inline">
+              <input type="radio" name="var8" id="var8-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var8-1" class="radio-inline">
+              <input type="radio" name="var8" id="var8-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var8-2" class="radio-inline">
+              <input type="radio" name="var8" id="var8-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var8-desc">
+              <input id="var8-desc" name="var8-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var9" class="col-md-4 control-label">Definição de anormalidade e pessoa para contato são indicados claramente.</label>
+          <div class="col-md-4">
+            <label for="var9-0" class="radio-inline">
+              <input type="radio" name="var9" id="var9-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var9-1" class="radio-inline">
+              <input type="radio" name="var9" id="var9-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var9-2" class="radio-inline">
+              <input type="radio" name="var9" id="var9-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var9-desc">
+              <input id="var9-desc" name="var9-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var10" class="col-md-4 control-label">Posição de estacionamento e o nome dos objetos móveis são indicados (carrinhos, prateleiras, etc.).</label>
+          <div class="col-md-4">
+            <label for="var10-0" class="radio-inline">
+              <input type="radio" name="var10" id="var10-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var10-1" class="radio-inline">
+              <input type="radio" name="var10" id="var10-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var10-2" class="radio-inline">
+              <input type="radio" name="var10" id="var10-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var10-desc">
+              <input id="var10-desc" name="var10-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var11" class="col-md-4 control-label">Produtos de pouco uso (se não foram utilizados no último mês ou mais) devem estar protegidos da poeira.</label>
+          <div class="col-md-4">
+            <label for="var11-0" class="radio-inline">
+              <input type="radio" name="var11" id="var11-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var11-1" class="radio-inline">
+              <input type="radio" name="var11" id="var11-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var11-2" class="radio-inline">
+              <input type="radio" name="var11" id="var11-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var11-desc">
+              <input id="var11-desc" name="var11-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var12" class="col-md-4 control-label">Itens desnecessários para operação não são deixados na área de trabalho.</label>
+          <div class="col-md-4">
+            <label for="var12-0" class="radio-inline">
+              <input type="radio" name="var12" id="var12-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var12-1" class="radio-inline">
+              <input type="radio" name="var12" id="var12-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var12-2" class="radio-inline">
+              <input type="radio" name="var12" id="var12-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var12-desc">
+              <input id="var12-desc" name="var12-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var13" class="col-md-4 control-label">Quaisquer itens armazenados ao redor da fábrica devem ter indicação de local de armazenamento, data limite do armazenamento e pessoa responsável. Painéis de montagem ou placas de inspeção devem conter proteção contra poeira, assim como outros equipamentos não utilizados por longos períodos.</label>
+          <div class="col-md-4">
+            <label for="var13-0" class="radio-inline">
+              <input type="radio" name="var13" id="var13-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var13-1" class="radio-inline">
+              <input type="radio" name="var13" id="var13-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var13-2" class="radio-inline">
+              <input type="radio" name="var13" id="var13-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var13-desc">
+              <input id="var13-desc" name="var13-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var14" class="col-md-4 control-label">Nenhuma caixa de peças ou produto acabado são colocados diretamente no chão. 
+(São necessários pelo menos 3 cm de espaço entre as caixas e o piso)</label>
+          <div class="col-md-4">
+            <label for="var14-0" class="radio-inline">
+              <input type="radio" name="var14" id="var14-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var14-1" class="radio-inline">
+              <input type="radio" name="var14" id="var14-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var14-2" class="radio-inline">
+              <input type="radio" name="var14" id="var14-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var14-desc">
+              <input id="var14-desc" name="var14-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var15" class="col-md-4 control-label">Para evitar danos à equipamentos de precisão, computadores e monitores, os mesmos devem ser fixados evitando quedas.</label>
+          <div class="col-md-4">
+            <label for="var15-0" class="radio-inline">
+              <input type="radio" name="var15" id="var15-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var15-1" class="radio-inline">
+              <input type="radio" name="var15" id="var15-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var15-2" class="radio-inline">
+              <input type="radio" name="var15" id="var15-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var15-desc">
+              <input id="var15-desc" name="var15-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var16" class="col-md-4 control-label">Lixo é separado de acordo com as regras da planta e não está com lixo acima de sua capacidade.</label>
+          <div class="col-md-4">
+            <label for="var16-0" class="radio-inline">
+              <input type="radio" name="var16" id="var16-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var16-1" class="radio-inline">
+              <input type="radio" name="var16" id="var16-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var16-2" class="radio-inline">
+              <input type="radio" name="var16" id="var16-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var16-desc">
+              <input id="var16-desc" name="var16-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <legend>Operadores e Funcionários</legend>
+        <div class="form-group">
+          <label for="var18" class="col-md-4 control-label">Portas ou janelas de áreas produtivas são mantidas fechadas, evitando assim entrada de poeira e animais. Utilize cortinas caso às portas sejam mantidas abertas.</label>
+          <div class="col-md-4">
+            <label for="var18-0" class="radio-inline">
+              <input type="radio" name="var18" id="var18-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var18-1" class="radio-inline">
+              <input type="radio" name="var18" id="var18-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var18-2" class="radio-inline">
+              <input type="radio" name="var18" id="var18-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var18-desc">
+              <input id="var18-desc" name="var18-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var19" class="col-md-4 control-label">Fiação, tubulações e tomadas, mesmo que temporárias, estão em boas condições, fixadas e protegidas, não se tornando um obstáculo (tomadas devem estar fixadas na parede ou pilar).</label>
+          <div class="col-md-4">
+            <label for="var19-0" class="radio-inline">
+              <input type="radio" name="var19" id="var19-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var19-1" class="radio-inline">
+              <input type="radio" name="var19" id="var19-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var19-2" class="radio-inline">
+              <input type="radio" name="var19" id="var19-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var19-desc">
+              <input id="var19-desc" name="var19-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var20" class="col-md-4 control-label">Utilização dos sapatos do uniforme dentro da área produtiva ou remoção de sujeira dos calçados nos tapetes das entradas.</label>
+          <div class="col-md-4">
+            <label for="var20-0" class="radio-inline">
+              <input type="radio" name="var20" id="var20-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var20-1" class="radio-inline">
+              <input type="radio" name="var20" id="var20-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var20-2" class="radio-inline">
+              <input type="radio" name="var20" id="var20-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var20-desc">
+              <input id="var20-desc" name="var20-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var21" class="col-md-4 control-label">Nome das linhas, processos e máquinas são indicadas claramente (informações devem constar também no layout da planta)</label>
+          <div class="col-md-4">
+            <label for="var21-0" class="radio-inline">
+              <input type="radio" name="var21" id="var21-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var21-1" class="radio-inline">
+              <input type="radio" name="var21" id="var21-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var21-2" class="radio-inline">
+              <input type="radio" name="var21" id="var21-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var21-desc">
+              <input id="var21-desc" name="var21-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var22" class="col-md-4 control-label">Os documentos necessários (combinação de trabalho padrão, instrução de operação, etc.) estão disponíveis e de fácil visualização para o operador, caso necessitem ser consultados.</label>
+          <div class="col-md-4">
+            <label for="var22-0" class="radio-inline">
+              <input type="radio" name="var22" id="var22-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var22-1" class="radio-inline">
+              <input type="radio" name="var22" id="var22-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var22-2" class="radio-inline">
+              <input type="radio" name="var22" id="var22-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var22-desc">
+              <input id="var22-desc" name="var22-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var23" class="col-md-4 control-label"> Área de operação e corredores estão seguros para a circulação.</label>
+          <div class="col-md-4">
+            <label for="var23-0" class="radio-inline">
+              <input type="radio" name="var23" id="var23-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var23-1" class="radio-inline">
+              <input type="radio" name="var23" id="var23-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var23-2" class="radio-inline">
+              <input type="radio" name="var23" id="var23-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var23-desc">
+              <input id="var23-desc" name="var23-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var24" class="col-md-4 control-label">Luz suficiente é fornecida na área de operação. (área de operação: mais de 300 lux, armazém: mais de 75 lux) *Certifique-se de cumprir o regulamento para cada país.</label>
+          <div class="col-md-4">
+            <label for="var24-0" class="radio-inline">
+              <input type="radio" name="var24" id="var24-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var24-1" class="radio-inline">
+              <input type="radio" name="var24" id="var24-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var24-2" class="radio-inline">
+              <input type="radio" name="var24" id="var24-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var24-desc">
+              <input id="var24-desc" name="var24-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var25" class="col-md-4 control-label">Peças e produtos são protegidos da luz solar direta. (ex. Use vidro opaco ou persianas)</label>
+          <div class="col-md-4">
+            <label for="var25-0" class="radio-inline">
+              <input type="radio" name="var25" id="var25-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var25-1" class="radio-inline">
+              <input type="radio" name="var25" id="var25-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var25-2" class="radio-inline">
+              <input type="radio" name="var25" id="var25-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var25-desc">
+              <input id="var25-desc" name="var25-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var26" class="col-md-4 control-label">Definição de anormalidade e pessoa para contato são indicados claramente.</label>
+          <div class="col-md-4">
+            <label for="var26-0" class="radio-inline">
+              <input type="radio" name="var26" id="var26-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var26-1" class="radio-inline">
+              <input type="radio" name="var26" id="var26-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var26-2" class="radio-inline">
+              <input type="radio" name="var26" id="var26-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var26-desc">
+              <input id="var26-desc" name="var26-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var27" class="col-md-4 control-label">Posição de estacionamento e o nome dos objetos móveis são indicados (carrinhos, prateleiras, etc.).</label>
+          <div class="col-md-4">
+            <label for="var27-0" class="radio-inline">
+              <input type="radio" name="var27" id="var27-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var27-1" class="radio-inline">
+              <input type="radio" name="var27" id="var27-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var27-2" class="radio-inline">
+              <input type="radio" name="var27" id="var27-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var27-desc">
+              <input id="var27-desc" name="var27-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var28" class="col-md-4 control-label">Produtos de pouco uso (se não foram utilizados no último mês ou mais) devem estar protegidos da poeira.</label>
+          <div class="col-md-4">
+            <label for="var28-0" class="radio-inline">
+              <input type="radio" name="var28" id="var28-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var28-1" class="radio-inline">
+              <input type="radio" name="var28" id="var28-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var28-2" class="radio-inline">
+              <input type="radio" name="var28" id="var28-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var28-desc">
+              <input id="var28-desc" name="var28-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var29" class="col-md-4 control-label">Itens desnecessários para operação não são deixados na área de trabalho.</label>
+          <div class="col-md-4">
+            <label for="var29-0" class="radio-inline">
+              <input type="radio" name="var29" id="var29-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var29-1" class="radio-inline">
+              <input type="radio" name="var29" id="var29-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var29-2" class="radio-inline">
+              <input type="radio" name="var29" id="var29-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var29-desc">
+              <input id="var29-desc" name="var29-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var30" class="col-md-4 control-label">Quaisquer itens armazenados ao redor da fábrica devem ter indicação de local de armazenamento, data limite do armazenamento e pessoa responsável. Painéis de montagem ou placas de inspeção devem conter proteção contra poeira, assim como outros equipamentos não utilizados por longos períodos.</label>
+          <div class="col-md-4">
+            <label for="var30-0" class="radio-inline">
+              <input type="radio" name="var30" id="var30-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var30-1" class="radio-inline">
+              <input type="radio" name="var30" id="var30-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var30-2" class="radio-inline">
+              <input type="radio" name="var30" id="var30-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var30-desc">
+              <input id="var30-desc" name="var30-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var31" class="col-md-4 control-label">Nenhuma caixa de peças ou produto acabado são colocados diretamente no chão. 
+(São necessários pelo menos 3 cm de espaço entre as caixas e o piso)</label>
+          <div class="col-md-4">
+            <label for="var31-0" class="radio-inline">
+              <input type="radio" name="var31" id="var31-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var31-1" class="radio-inline">
+              <input type="radio" name="var31" id="var31-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var31-2" class="radio-inline">
+              <input type="radio" name="var31" id="var31-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var31-desc">
+              <input id="var31-desc" name="var31-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var32" class="col-md-4 control-label">Para evitar danos à equipamentos de precisão, computadores e monitores, os mesmos devem ser fixados evitando quedas.</label>
+          <div class="col-md-4">
+            <label for="var32-0" class="radio-inline">
+              <input type="radio" name="var32" id="var32-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var32-1" class="radio-inline">
+              <input type="radio" name="var32" id="var32-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var32-2" class="radio-inline">
+              <input type="radio" name="var32" id="var32-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var32-desc">
+              <input id="var32-desc" name="var32-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="var33" class="col-md-4 control-label">Lixo é separado de acordo com as regras da planta e não está com lixo acima de sua capacidade.</label>
+          <div class="col-md-4">
+            <label for="var33-0" class="radio-inline">
+              <input type="radio" name="var33" id="var33-0" value="Ok" checked="checked">Ok</input>
+            </label>
+            <label for="var33-1" class="radio-inline">
+              <input type="radio" name="var33" id="var33-1" value="Ng" checked="checked">Ng</input>
+            </label>
+            <label for="var33-2" class="radio-inline">
+              <input type="radio" name="var33" id="var33-2" value="Na" checked="checked">Na</input>
+            </label>
+            <label for="var33-desc">
+              <input id="var33-desc" name="var33-desc" type="text" placeholder="Comentário" class="form-control input-md" />
+            </label>
+          </div>
+        </div>
+        <hr />
+      </fieldset>
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
