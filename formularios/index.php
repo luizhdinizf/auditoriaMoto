@@ -1,11 +1,11 @@
 <html>
-<?php  include($_SERVER['DOCUMENT_ROOT']."/template/php/header.php");?>
+<?php  include("template/php/header.php");?>
 
 
 
   <body style="margin:0px;padding:0px;overflow:hidden">
  
-     <?php  include($_SERVER['DOCUMENT_ROOT']."/template/php/cabecalhoYazaki.php");?>
+     <?php  include("template/php/cabecalhoYazaki.php");?>
      <div class="list-group">
      <?php         
         
