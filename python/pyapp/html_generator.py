@@ -21,7 +21,7 @@ def geraCabecalhoYazaki():
     return data
 
 def geraHtmlHeader():  
-    file = open(path_base+'emplate/header.html','r',encoding = "utf-8")
+    file = open(path_base+'template/header.html','r',encoding = "utf-8")
     data = file.read() 
     return data
 
