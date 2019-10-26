@@ -14,18 +14,19 @@ from os import listdir
 from os.path import isfile, join    
 import codecs
 
+
 def geraCabecalhoYazaki():  
-    file = open('./template/cabecalhoYazaki.html','r',encoding = "utf-8")
+    file = open(path_base+'template/cabecalhoYazaki.html','r',encoding = "utf-8")
     data = file.read() 
     return data
 
 def geraHtmlHeader():  
-    file = open('./template/header.html','r',encoding = "utf-8")
+    file = open(path_base+'emplate/header.html','r',encoding = "utf-8")
     data = file.read() 
     return data
 
 def geraLoadSave():
-    file = open('./template/load_save.html','r',encoding = "utf-8")
+    file = open(path_base+'template/load_save.html','r',encoding = "utf-8")
     data = file.read() 
     return data
     
@@ -231,7 +232,7 @@ def gera_form_automatico(titulo,campos,path,tipo_form):
     file.close()
 
 
-path_base = "/var/www/html/" 
+path_base = "/html/" 
 path_csv = path_base + 'upload/uploaded_files/'
 os.chdir(path_base)
 print("Start")

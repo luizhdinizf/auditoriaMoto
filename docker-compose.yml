@@ -28,7 +28,8 @@ services:
     build:
       context: ./python
     volumes:
-      - "./app:/var/www/html"
+      - "./app:/html"
+      - "./python/pyapp:/pyapp"
  
   # Data persistence service layer
   mysql:
