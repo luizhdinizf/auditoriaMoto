@@ -1,5 +1,5 @@
 <html>
-<?php  include($_SERVER['DOCUMENT_ROOT']."/template/php/header.php");?>
+<?php  include("../template/php/header.php");?>
 
 
 
@@ -44,4 +44,4 @@
 
 </form>
 
-<?php echo("<td><a href='/formularios/moto/' class='btn btn-primary'>Voltar</a></td>");?>
+<?php echo("<td><a href='../' class='btn btn-primary'>Voltar</a></td>");?>
