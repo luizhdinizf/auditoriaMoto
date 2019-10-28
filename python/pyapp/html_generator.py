@@ -13,24 +13,27 @@ import os
 from os import listdir
 from os.path import isfile, join    
 import codecs
+from reloadr import autoreload
 
 
+
+@autoreload
 def geraCabecalhoYazaki():  
     file = open(path_base+'template/cabecalhoYazaki.html','r',encoding = "utf-8")
     data = file.read() 
     return data
-
+@autoreload
 def geraHtmlHeader():  
     file = open(path_base+'template/header.html','r',encoding = "utf-8")
     data = file.read() 
     return data
-
+@autoreload
 def geraLoadSave():
     file = open(path_base+'template/load_save.html','r',encoding = "utf-8")
     data = file.read() 
     return data
     
-
+@autoreload
 def generate_input_text(title,texto):
     doc, tag, text = Doc().tagtext()  
     with tag('div',klass="form-group"):
@@ -41,7 +44,7 @@ def generate_input_text(title,texto):
     doc.stag('hr')
     pagina=indent(doc.getvalue())
     return pagina
-
+@autoreload
 def generate_h_radio(title,radios,question):
     doc, tag, text = Doc().tagtext()  
     with tag('div',klass="form-group"):
@@ -55,7 +58,7 @@ def generate_h_radio(title,radios,question):
     doc.stag('hr')      
     pagina=doc.getvalue()
     return pagina
-
+@autoreload
 def generate_check_moto(title,question):
     radios=['Ok','Ng','Na']
     doc, tag, text = Doc().tagtext()  
@@ -73,7 +76,7 @@ def generate_check_moto(title,question):
     doc.stag('hr')              
     pagina=doc.getvalue()
     return pagina
-
+@autoreload
 def generate_check_mpps(title,question):
     radios=['A','B','C','D','E']
     doc, tag, text = Doc().tagtext()  
@@ -91,7 +94,7 @@ def generate_check_mpps(title,question):
     doc.stag('hr')              
     pagina=doc.getvalue()
     return pagina
-
+@autoreload
 def generate_check_manutencao(title,question):
     radios=['Normal','Irregular','Pendência','Regularizado','Pendência Regularizada']
     doc, tag, text = Doc().tagtext()  
@@ -109,7 +112,7 @@ def generate_check_manutencao(title,question):
     return pagina
 
 
-
+@autoreload
 def generate_textbox(title,texto):
     doc, tag, text = Doc().tagtext()  
     with tag('div',klass="form-group"):
@@ -120,7 +123,7 @@ def generate_textbox(title,texto):
                 None
     pagina=indent(doc.getvalue())
     return pagina
-
+@autoreload
 def generate_subtitle(subtitle):
     doc, tag, text = Doc().tagtext()  
     doc._append("<br/>")
@@ -131,7 +134,7 @@ def generate_subtitle(subtitle):
                         text(subtitle)  
     pagina=indent(doc.getvalue())
     return pagina
-
+@autoreload
 def generate_cabecalho_moto():
     dados_title = ['dep_auditor','auditor','local']
     dados_text = ['Departamento do Auditor','Auditor','Linha/Local']
@@ -147,7 +150,7 @@ def generate_cabecalho_moto():
     print(pagina)
     return pagina
 
-
+@autoreload
 def gera_index(paginas,path):
     doc, tag, text = Doc().tagtext()
     file = open(path+'index.html','w',encoding = "utf-8")  
@@ -165,7 +168,8 @@ def gera_index(paginas,path):
     webpage=indent(doc.getvalue())
     file.write(webpage)
     file.close()
-    
+
+@autoreload    
 def formatar(string):
     formatada = string.replace(" ", "_")
     re.sub('[^A-Za-z0-9]+', '', formatada)
@@ -173,7 +177,7 @@ def formatar(string):
     return formatada
     
     
-
+@autoreload
 def gera_form_automatico(titulo,campos,path,tipo_form):
     doc, tag, text = Doc().tagtext()
     file = open(path+formatar(titulo)+'.html','w',encoding = "utf-8")     
@@ -231,46 +235,48 @@ def gera_form_automatico(titulo,campos,path,tipo_form):
     file.write(pagina)
     file.close()
 
+@autoreload
+def inicia():
+    path_base = "/html/" 
+    path_csv = path_base + 'upload/uploaded_files/'
+    os.chdir(path_base)
+    print("Start")
 
-path_base = "/html/" 
-path_csv = path_base + 'upload/uploaded_files/'
-os.chdir(path_base)
-print("Start")
-
-while 1:
-        path = path_base
-    #try:
-        if isfile(path_csv+'form.csv'):
-            print("Novo arquivo encontrado, iniciando Processamento")
-            with codecs.open(path_csv+'form.csv', 'rb', encoding="latin-1") as csvfile:
-                readCSV = csv.reader(csvfile, delimiter=';')
-                campos=[]
-                for row in readCSV:
-                    if row[0] == '':
-                        continue
-                    elif row[1] == 'titulo':
-                        titulo = row[0]   
-                    elif row[1] == 'tipo':
-                        tipo=row[0]   
-                        path = path+tipo+"/"      
-                    else:
-                        campos.append(row)
-            
-                print(tipo)
-                gera_form_automatico(titulo,campos,path,tipo)
-            print ("1")
+    while 1:
+            path = path_base
+        #try:
+            if isfile(path_csv+'form.csv'):
+                print("Novo arquivo encontrado, iniciando Processamento")
+                with codecs.open(path_csv+'form.csv', 'rb', encoding="latin-1") as csvfile:
+                    readCSV = csv.reader(csvfile, delimiter=';')
+                    campos=[]
+                    for row in readCSV:
+                        if row[0] == '':
+                            continue
+                        elif row[1] == 'titulo':
+                            titulo = row[0]   
+                        elif row[1] == 'tipo':
+                            tipo=row[0]   
+                            path = path+tipo+"/"      
+                        else:
+                            campos.append(row)
+                
+                    print(tipo)
+                    gera_form_automatico(titulo,campos,path,tipo)
+                print ("1")
+                
             
         
-    
-        
             
-            htmls = [f for f in listdir(path) if isfile(join(path, f))and f[-4:] =="html" and f != "index.html"]
-            #gera_index(htmls,path)
-            os.remove(path_csv+'form.csv')
-            print ("Processamento Finalizado, arquivo removido")
-   # except:
-         #   print('erro')
+                
+                htmls = [f for f in listdir(path) if isfile(join(path, f))and f[-4:] =="html" and f != "index.html"]
+                #gera_index(htmls,path)
+                os.remove(path_csv+'form.csv')
+                print ("Processamento Finalizado, arquivo removido")
+    # except:
+            #   print('erro')
 
-#gera_index(paginas)
+    #gera_index(paginas)
 
 
+inicia()

@@ -50,7 +50,6 @@ services:
     environment:
       - PMA_HOST=mysql
 
-
   theia:
     image: theiaide/theia
     ports:
