@@ -43,24 +43,27 @@ $maxScore = $scoreArray['maxScore'];
 	    var color = Chart.helpers.color;
 		var barChartData = {
 			labels: ['<?php echo($tableName);?>'],
-			datasets: [{
-				label: 'Não Conformidade',
+			datasets: [
+                <?php
+                 foreach($scoreArray as $key => $value){	        
+                    if($key != 'maxScore'){
+                echo("
+                {
+				label: '$key',
 				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
 				borderColor: window.chartColors.red,
 				borderWidth: 1,
-				data: [
-					<?php echo($NgScore);?>,
-                    0,                    
+                data: [ ");
+                
+                echo($value);           
+                
+                echo(",
 				]
-			}, {
-				label: 'Total',
-				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.blue,
-				borderWidth: 1,
-				data: [
-                    <?php echo($maxScore);?>,
-				]
-			}]
+                },"); 
+                 }
+                }
+                ?>            
+         ]
 
 		};
 

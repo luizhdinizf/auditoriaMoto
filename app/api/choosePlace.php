@@ -7,7 +7,7 @@
  
     <?php
         @include 'lib/setParameters.php';
-        $query = "SELECT * FROM auditorias";               
+        $query = "SELECT DISTINCT `nome` FROM `auditorias`";               
         $queryResultArray = array();
         $queryResult = mysqli_query($conn,$query);
        

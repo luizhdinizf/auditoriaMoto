@@ -51,18 +51,13 @@ function loadTableWithoutHeaders($conn, $tableName,$selectedId) {
 function evaluateScore($tableData) {
    $maxScore = 0;
    $NgScore = 0;
+   $scoreArray = array();
    foreach($tableData as $key => $value){	        
        $maxScore = $maxScore + 1;
-       if($value == "Ng"){
-           $NgScore = $NgScore + 1;
-       }
+       $scoreArray[$value] += 1;
+   
    }
-   $nGPercentil = ($NgScore/$maxScore)*100;
-   $scoreArray = array(
-       "NgScore" => "$NgScore",
-       "maxScore" => "$maxScore",
-       "nGPercentil" => "$nGPercentil",
-   );
+  $scoreArray['maxScore'] = $maxScore;
 
    return($scoreArray);
    
