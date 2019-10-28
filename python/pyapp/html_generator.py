@@ -237,6 +237,7 @@ def gera_form_automatico(titulo,campos,path,tipo_form):
 
 @autoreload
 def inicia():
+    global path_base
     path_base = "/html/" 
     path_csv = path_base + 'upload/uploaded_files/'
     os.chdir(path_base)
