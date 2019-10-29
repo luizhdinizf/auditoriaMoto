@@ -22,35 +22,15 @@ if(file_exists($dest_path)){
  
 if(move_uploaded_file($fileTmpPath, $dest_path))
 {
-  echo("
-      <body style=\"margin:0px;padding:0px;align:center\">
-      <form class=\"form-horizontal\" action=\"../api/envio.php\" method=\"post\" name=\"f1\">
-      <fieldset>
-      <legend>Body 551</legend>
-      <input type=\"hidden\" id=\"Body 551\" name=\"titulo\" value=\"$titulo\" />
-      ");
-
-
-  $row = 0;
-  if (($handle = fopen($dest_path, "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {   
-      
-      if ($data[1] == 'titulo'){
-        $titulo=$data[0];
-      }elseif ($data[1] == 'tipo'){
-        $tipo = $data[0];
-    }else{
-    }
-    }
-  fclose($handle);
-  }
+  echo("Sucesso!!");
+ 
 }
 else
 {
   $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
 }
-
 }
+
 
 
 
