@@ -22,7 +22,7 @@ if(file_exists($dest_path)){
  
 if(move_uploaded_file($fileTmpPath, $dest_path))
 {
-  echo("Sucesso!!");
+  echo("Sucesso <a class=\"btn btn-primary\" href=\"../\" role=\"button\">Voltar</a>");
  
 }
 else
