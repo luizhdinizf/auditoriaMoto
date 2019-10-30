@@ -29,14 +29,13 @@ function createTableIfNew($conn, $tableName, $tableFields) {
 			$sqlCreateTable .= '`';
 			$sqlCreateTable .= $key;
 			$sqlCreateTable .= '`';
-			$sqlCreateTable .= " VARCHAR(200) NOT NULL DEFAULT 'Na',";
+			$sqlCreateTable .= " TEXT(200) ,";
 		}		
-		$sqlCreateTable .= 'PRIMARY KEY (`id`) ) ENGINE = MyISAM';	 
-		echo($sqlCreateTable);
+		$sqlCreateTable .= 'PRIMARY KEY (`id`) ) ENGINE = MyISAM';	 		
 		if ($conn->query($sqlCreateTable) === TRUE) {
 			echo "Sucesso Ao Criar Tabela $tableName <br>";
 			} else {
-			echo "Error: " . $sqlCreateTable . "<br>" . $conn->error;
+			echo "Error: " . "ERRO" . "<br>" . $conn->error;
 			}
 
 		createResultTable($conn, $tableName, $tableFields); 	
@@ -44,11 +43,11 @@ function createTableIfNew($conn, $tableName, $tableFields) {
 		if ($conn->query($sqlInsertAuditorias ) === TRUE) {
 			echo "Sucesso Ao Criar Tabela $tableName <br>";
 			} else {
-			echo "Error: " . $sqlInsertAuditorias . "<br>" . $conn->error;
+			echo "Error: " . "ERRO" . "<br>" . $conn->error;
 			}
 	
 	} 
-
+ 
  }
 
 
