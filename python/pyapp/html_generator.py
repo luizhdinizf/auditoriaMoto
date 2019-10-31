@@ -258,11 +258,12 @@ def inicia():
                             titulo = row[0]   
                         elif row[1] == 'tipo':
                             tipo=row[0]   
-                            path = path+tipo+"/"      
+                            path = path+tipo+"/"  
+                            print(path)    
                         else:
                             campos.append(row)
                 
-                    print(tipo)
+                    
                     gera_form_automatico(titulo,campos,path,tipo)
                 print ("1")
                 
