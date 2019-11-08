@@ -14,7 +14,7 @@ from os import listdir
 from os.path import isfile, join    
 import codecs
 from reloadr import autoreload
-
+import time
 
 
 @autoreload
@@ -244,6 +244,7 @@ def inicia():
     print("Start")
 
     while 1:
+            time.sleep(0.1)
             path = path_base
         #try:
             if isfile(path_csv+'form.csv'):
