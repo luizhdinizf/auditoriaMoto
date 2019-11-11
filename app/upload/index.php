@@ -2,8 +2,10 @@
 session_start(); 
 ?>
 <!DOCTYPE html>
+
 <html>
 <head>
+<?php header("Content-type: text/html; charset=utf-8"); ?>
   <title>PHP File Upload</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="/repo/bootstrap.min.css" />
@@ -20,7 +22,7 @@ session_start();
       unset($_SESSION['message']);
     }
   ?>
-  <form method="POST" action="upload.php" enctype="multipart/form-data">
+  <form method="POST" action="uploadParser.php" enctype="multipart/form-data">
     <div>
       <span>Upload a File:</span>
       <input type="file" name="uploadedFile" />

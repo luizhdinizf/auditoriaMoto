@@ -4,7 +4,7 @@ function filledFormsList($conn,$tableName) {
   $headerFieldsArray = str_replace("`", "", $headerFieldsString);
   $headerFieldsArray = explode(",", $headerFieldsArray);  
  
-  $queryAuditorias = "SELECT $headerFieldsString FROM $tableName LIMIT 10";
+  $queryAuditorias = "SELECT $headerFieldsString FROM $tableName LIMIT 30 ";
   $queryResultArray = array();
   $queryResult = mysqli_query($conn,$queryAuditorias);
  

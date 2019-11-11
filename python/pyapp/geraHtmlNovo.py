@@ -19,46 +19,9 @@ import time
 
 
 @autoreload
-def geraCabecalhoYazaki():  
-    file = open(path_base+'template/cabecalhoYazaki.html','r',encoding = "utf-8")
-    data = file.read() 
-    return data
-@autoreload
-def geraHtmlHeader():  
-    file = open(path_base+'template/header.html','r',encoding = "utf-8")
-    data = file.read() 
-    return data
-@autoreload
-def geraLoadSave():
-    file = open(path_base+'template/load_save.html','r',encoding = "utf-8")
-    data = file.read() 
-    return data
-    
-@autoreload
-def generate_input_text(title,texto):
-    doc, tag, text = Doc().tagtext()  
-    with tag('div',klass="form-group"):
-        with tag('label',('for', title),klass="col-md-4 control-label"):
-            text(texto)
-        with tag('div', klass="col-md-4"):
-            doc.stag('input', id=title, name=title, type="text", placeholder=title, klass="form-control input-md", required="")
-    doc.stag('hr')
-    pagina=indent(doc.getvalue())
-    return pagina
-@autoreload
-def generate_h_radio(title,radios,question):
-    doc, tag, text = Doc().tagtext()  
-    with tag('div',klass="form-group"):
-        with tag('label',('for', title),klass="col-md-4 control-label"):
-            text(question)
-        with tag('div',klass="col-md-4"):
-            for idx,radio in enumerate(radios):            
-                with tag('label',('for', title+'-'+str(idx)),klass="radio-inline"):
-                    with tag ('input', type="radio", name=title, id=title+'-'+str(idx) ,value=radio, checked="checked"):
-                        text(radio)
-    doc.stag('hr')      
-    pagina=doc.getvalue()
-    return pagina
+
+
+
 @autoreload
 def generate_check_moto(title,question):
     radios=['Ok','Ng','Na']
@@ -78,64 +41,14 @@ def generate_check_moto(title,question):
     pagina=doc.getvalue()
     return pagina
 @autoreload
-def generate_check_mpps(title,question):
-    radios=['A','B','C','D','E']
-    doc, tag, text = Doc().tagtext()  
-    with tag('div',klass="form-group"):
-        with tag('label',('for', title),klass="col-md-4 control-label"):
-            text(question)
-        with tag('div',klass="col-md-4"):
-            for idx,radio in enumerate(radios):            
-                with tag('label',('for', title+'-'+str(idx)),klass="radio-inline"):             
-                    with tag ('input', type="radio", name=title, id=title+'-'+str(idx) ,value=radio, checked="checked"):
-                        text(radio)
-                   
-            with tag('label',('for', title+'-desc')):
-                    doc.stag ('input', id= title+'-desc', name=title+'-desc', type="text", placeholder='Comentário', klass="form-control input-md")
-    doc.stag('hr')              
-    pagina=doc.getvalue()
-    return pagina
-@autoreload
-def generate_check_manutencao(title,question):
-    radios=['Normal','Irregular','Pendência','Regularizado','Pendência Regularizada']
-    doc, tag, text = Doc().tagtext()  
-    with tag('div',klass="form-group"):
-        with tag('label',('for', title),klass="col-md-4 control-label"):
-            text(question)
-        with tag('div',klass="col-md-4"):
-            for idx,radio in enumerate(radios):            
-                with tag('label',('for', title+'-'+str(idx)),klass="radio-inline"):
-                    with tag ('input', type="radio", name=title, id=title+'-'+str(idx) ,value=radio):
-                        text(radio)
-            
-    doc.stag('hr')              
-    pagina=doc.getvalue()
-    return pagina
+
+
 
 
 @autoreload
-def generate_textbox(title,texto):
-    doc, tag, text = Doc().tagtext()  
-    with tag('div',klass="form-group"):
-        with tag('label',('for', title),klass="col-md-4 control-label"):
-            text(texto)
-        with tag('div', klass="col-md-4"):
-            with tag('textarea', klass="form-control", id=title, name=title):
-                None
-    pagina=indent(doc.getvalue())
-    return pagina
     
 @autoreload
-def generate_subtitle(subtitle):
-    doc, tag, text = Doc().tagtext()  
-    doc._append("<br/>")
-    doc._append("<br/>")
-    doc._append("<br/>")
-    doc._append("<br/>")
-    with tag("legend"):
-                        text(subtitle)  
-    pagina=indent(doc.getvalue())
-    return pagina
+
 @autoreload
 def generate_cabecalho_moto():
     dados_title = ['dep_auditor','auditor','local']
@@ -153,24 +66,6 @@ def generate_cabecalho_moto():
     return pagina
     
 
-@autoreload
-def gera_index(paginas,path):
-    doc, tag, text = Doc().tagtext()
-    file = open(path+'index.html','w',encoding = "utf-8")  
-    with tag('html'):
-        doc.asis(geraHtmlHeader())
-        with tag('body',style="margin:0px;padding:0px;overflow:hidden"):
-            doc.asis(geraCabecalhoYazaki())
-            with tag('div', klass="list-group"):
-                for pagina in paginas:
-                    with tag('a' ,href='./'+formatar(pagina),klass="list-group-item list-group-item-action"):
-                        text(pagina)
-                    #gera_form(pagina)
-            with tag('a', klass="btn btn-primary", href="../upload", role="button"):
-                     text('Upload')
-    webpage=indent(doc.getvalue())
-    file.write(webpage)
-    file.close()
 
 @autoreload    
 def formatar(string):

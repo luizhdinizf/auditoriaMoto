@@ -1,24 +1,17 @@
 <?php
 
-function insertOnAuditorias($conn, $tableName){
-	$sqlInsere = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', 'moto');";
-	if ($conn->query($sqlInsere) === TRUE) {
-		echo "Sucesso Ao Criar Tabela $tableName <br>";
-		} else {
-		echo "Error: " . $sqlCreateTable . "<br>" . $conn->error;
-	}
-
-
-}
-function createTableIfNew($conn, $tableName, $tableFields) {
-	$sqlCheckTableExistence = "SHOW TABLES LIKE '$tableName'";
+function checkTableExistence($conn, $tableName) {
+    $sqlCheckTableExistence = "SHOW TABLES LIKE '$tableName'";
 	$queryResultArray = array();
 	$queryResult = mysqli_query($conn,$sqlCheckTableExistence);
 	while($resultRow = mysqli_fetch_assoc($queryResult)) {
 		$queryResultArray[] = $resultRow;
-	}
-	print_r($sqlCheckTableExistence);
-	if (empty($queryResultArray)){
+    }
+    $tableExists =  ~empty($queryResultArray);
+    return tableExists;
+
+}
+function createDataTable($conn, $tableName, $tableFields) {
 		insertOnAuditorias($conn, $tableName);
 		$sqlCreateTable = "CREATE TABLE `yazaki`.`";
 		$sqlCreateTable .= $tableName;
@@ -38,18 +31,21 @@ function createTableIfNew($conn, $tableName, $tableFields) {
 			echo "Error: " . "ERRO" . "<br>" . $conn->error;
 			}
 
-		createResultTable($conn, $tableName, $tableFields); 	
-		$sqlInsertAuditorias = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', 'moto');";	
+			
+		
+	
+	}  
+ 
+
+ function inserIntotAuditorias($conn, $tableName) {
+    $sqlInsertAuditorias = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', 'moto');";	
 		if ($conn->query($sqlInsertAuditorias ) === TRUE) {
 			echo "Sucesso Ao Criar Tabela $tableName <br>";
 			} else {
 			echo "Error: " . "ERRO" . "<br>" . $conn->error;
 			}
-	
-	} 
- 
- }
 
+ }
 
  function createResultTable($conn, $tableName, $tableFields) {
 	$tableName .= "_resultado";
