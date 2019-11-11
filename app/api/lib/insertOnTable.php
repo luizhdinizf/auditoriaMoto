@@ -51,47 +51,15 @@ function insertOnTable($conn, $tableName,$tableFields,$currentDate) {
  }
 
 
- function generateRandom($conn, $tableName,$tableFields,$currentDate) {
-	$numberOfSamples = range(0,10); 
-  
-	// printing elements of array 
-	foreach ($numberOfSamples as $sample) { 		
-		insertOnTableRandom($conn, $tableName,$tableFields,$currentDate);
-	} 
-
- }
-
- function insertOnTableRandom($conn, $tableName,$tableFields,$currentDate) {
-	$sqlInsertOnTable = "INSERT INTO `$tableName` (`id`, `data` ";
-	foreach($tableFields as $key => $value){
-		#"`local`, `turno`, `lider`, `situacao`, `descricao`, `nome`) "
-		#"VALUES (NULL, '$data', '$local','$turno','$lider','$situacao','$descricao','$nome')";
-		$sqlInsertOnTable .= ',`';
-		$sqlInsertOnTable .= $key;
-		$sqlInsertOnTable .= '`';	
-		}	
-
-	
-	$sqlInsertOnTable .= ") VALUES (NULL,'$currentDate'";
-	foreach($tableFields as $key => $value){
-		$sqlInsertOnTable .= ",'";
-		if (rand(1,10)>5){
-			$value = 'Ng';
-		}else
-		{
-			$value = 'Ok';
-		}
-
-		$sqlInsertOnTable .= $value;
-		$sqlInsertOnTable .= "'";	
-		}
-	$sqlInsertOnTable .= ")";
-
-	if ($conn->query($sqlInsertOnTable) === TRUE) {
-	echo "New record inserted successfully on $tableName <br>";
+ function insertOnFieldsTable($tableName,$varName,$varDescription) {
+    global $conn;	
+    $sqlInsertOnFieldsTable = "INSERT INTO `$tableName` (`varName`, `varDescription`) VALUES ('$varName', '$varDescription');";
+    $conn->query($sqlInsertOnFieldsTable);
+	/*if (=== TRUE) {
+    echo "New record inserted successfully on $tableName <br>";
 	} else {
-	echo "Error: " . $sqlInsertOnTable . "<br>" . $conn->error;
-	}
+    echo "Error: " . $sqlInsertOnFieldsTable . "<br>" . $conn->error;
+	}*/
  }
 
 ?>

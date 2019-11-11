@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 function generateCabecalho() {
     return file_get_contents($_SERVER['DOCUMENT_ROOT']."/template/php/cabecalhoMoto.php");
 }
@@ -17,7 +20,7 @@ function generateCheckMpps($title, $question) {
         $page.="</label>\n";    
     }
         $page .= "<label for=\"$title-desc\" class=\"radio-inline\">\n";
-        $page .= "<input type=\"text\" name=\"$title\" id=\"$title-desc\" placeholder=\"Comentario\" class=\"form-control input-md\">\n";
+        $page .= "<input type=\"text\" name=\"$title-desc\" id=\"$title-desc\" placeholder=\"Comentario\" class=\"form-control input-md\">\n";
         $page.="</label>\n";   
   
 
@@ -45,21 +48,41 @@ function geraEnviar(){
 }
 
 function geraBody($titulo,$tipo,$perguntasArray,$tiposArray){
+    global $conn;
     $page  ="<body style =\"margin:0px;padding:0px;align:center\" onload=carregar()>\n";
     $page .="<form class=\"form-horizontal\" action=\"../api/envio.php\" method=\"post\" name=\"f1\">";
     $page .= "<fieldset>";
     $page .= "<legend>";
     $page .= $titulo;
     $page .= "</legend>";
-    $page.="<input type=\"hidden\" id=\"$titulo\" name=\"titulo\" value=\"$titulo\">"; // Incluir formatar titulos
+    $tituloFormatado = str_replace(' ', '_', $titulo); 
+    $page.="<input type=\"hidden\" id=\"$titulo\" name=\"titulo\" value=\"$tituloFormatado\">"; // Incluir formatar titulos
     
+    if(checkTableExistence($tituloFormatado.'_fields')) { 
+        truncateTable($tituloFormatado.'_fields');   
+    }else{       
+        createFieldsTable($tituloFormatado.'_fields');   
+    }
+  
+   
 
     $page.=generateCabecalho();
     
     $num = count($perguntasArray);
     for ($c=0; $c < $num; $c++) {
         $stringVar = "var".$c; 
-        $page.=generateCheckMpps($stringVar,$perguntasArray[$c]);
+        $tipoPergunta = $tiposArray[$c];
+        if ($tipoPergunta == 'check_moto'){
+            $page.=generateCheckMpps($stringVar,$perguntasArray[$c]);
+            $perguntaAtual=$perguntasArray[$c];
+            insertOnFieldsTable($tituloFormatado.'_fields',$stringVar,$perguntaAtual);
+        }elseif ($tipoPergunta == 'check_mpps'){
+            $page.=generateCheckMpps($stringVar,$perguntasArray[$c]);
+            $perguntaAtual=$perguntasArray[$c];       
+            insertOnFieldsTable($tituloFormatado.'_fields',$stringVar,$perguntaAtual);
+        }elseif($tipoPergunta == 'subtitulo'){
+            $page.=generate_subtitle($perguntasArray[$c]);
+        }
     }      
   
     
@@ -68,6 +91,7 @@ function geraBody($titulo,$tipo,$perguntasArray,$tiposArray){
     $page .= "</fieldset>";
     $page .="</form>";
     $page .="</body>";
+
     return($page);
 }
 

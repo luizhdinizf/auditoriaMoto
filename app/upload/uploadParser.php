@@ -1,5 +1,12 @@
 <?php
 ini_set('default_charset', 'utf-8');
+
+
+
+
+@include '../api/lib/setParameters.php';
+@include '../api/lib/createTable.php';
+@include '../api/lib/insertOnTable.php';
 @include 'parserFunctions.php';
 
 
@@ -37,28 +44,18 @@ if (($handle = fopen($fileTmpPath, "r")) !== FALSE) {
         
         
     }
-    fclose($handle);   
+    fclose($handle);  
+    
     $titulo = str_replace(' ', '_', $titulo);   
     $page = utf8_encode(geraWebpageString($titulo,$tipo,$perguntasArray,$tiposArray));
     $path='../'.$tipo.'/'.$titulo.'.html';
-    echo($path);
     $fp = fopen($path, 'w');
     fwrite($fp, $page);
     fclose($fp);
 
 }
 
- 
-
-if(move_uploaded_file($fileTmpPath, $dest_path))
-{
- 
- 
-}
-else
-{
-  $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
-}
+ echo("Sucesso <a class=\"btn btn-primary\" href=\"../\" role=\"button\">Voltar</a>");
 }
 
 

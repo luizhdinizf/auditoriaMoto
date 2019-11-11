@@ -1,17 +1,36 @@
 <?php
 
-function checkTableExistence($conn, $tableName) {
+function insertOnAuditorias($conn, $tableName){
+	$sqlInsere = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', 'moto');";
+	if ($conn->query($sqlInsere) === TRUE) {
+		echo "Sucesso Ao Criar Tabela $tableName <br>";
+		} else {
+		echo "Error: " . $sqlCreateTable . "<br>" . $conn->error;
+    }
+}
+
+function checkTableExistence($tableName) {
+    global $conn;
+    
     $sqlCheckTableExistence = "SHOW TABLES LIKE '$tableName'";
-	$queryResultArray = array();
-	$queryResult = mysqli_query($conn,$sqlCheckTableExistence);
+    $queryResultArray = array();
+   
+	$queryResult = $conn->query($sqlCheckTableExistence);
 	while($resultRow = mysqli_fetch_assoc($queryResult)) {
 		$queryResultArray[] = $resultRow;
     }
-    $tableExists =  ~empty($queryResultArray);
-    return tableExists;
+ 
+    if (empty($queryResultArray)){
+        return FALSE;
+    }else{
+        return TRUE;
+    }
+   
+    
 
 }
-function createDataTable($conn, $tableName, $tableFields) {
+function createDataTable($tableName, $tableFields) {
+        global $conn;
 		insertOnAuditorias($conn, $tableName);
 		$sqlCreateTable = "CREATE TABLE `yazaki`.`";
 		$sqlCreateTable .= $tableName;
@@ -37,7 +56,8 @@ function createDataTable($conn, $tableName, $tableFields) {
 	}  
  
 
- function inserIntotAuditorias($conn, $tableName) {
+ function inserIntotAuditorias($conne, $tableName) {
+    global $conn;   
     $sqlInsertAuditorias = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', 'moto');";	
 		if ($conn->query($sqlInsertAuditorias ) === TRUE) {
 			echo "Sucesso Ao Criar Tabela $tableName <br>";
@@ -47,7 +67,8 @@ function createDataTable($conn, $tableName, $tableFields) {
 
  }
 
- function createResultTable($conn, $tableName, $tableFields) {
+ function createResultTable($conne, $tableName, $tableFields) {
+    global $conn;   
 	$tableName .= "_resultado";
 	$sqlCreateResultTable ='CREATE TABLE `yazaki`.`';
 	$sqlCreateResultTable .=$tableName;	
@@ -58,6 +79,38 @@ function createDataTable($conn, $tableName, $tableFields) {
 		echo "Error: " . $sqlCreateResultTable . "<br>" . $conn->error;
 		}	
 }
+
+function createFieldsTable($tableName) {
+    global $conn;   
+	
+	$sqlCreateFieldsTable ='CREATE TABLE `yazaki`.`';
+    $sqlCreateFieldsTable .= $tableName;	
+    $sqlCreateFieldsTable .='` ( `varName` TEXT NOT NULL , `varDescription` TEXT NOT NULL ) ENGINE = InnoDB';	
+    $conn->query($sqlCreateFieldsTable);
+    /*
+	if ($conn->query($sqlCreateFieldsTable) === TRUE) {
+		echo "Sucesso Ao Criar Tabela $tableName <br>";
+		} else {
+		echo "Error: " . $sqlCreateFieldsTable . "<br>" . $conn->error;
+        }	
+        */
+}
+
+function truncateTable($tableName) {
+    global $conn;   
+	
+	$sqlTruncateTable = "TRUNCATE `yazaki`.`$tableName`";
+    
+    $conn->query($sqlTruncateTable);
+    /*
+	if ($conn->query($sqlTruncateTable) === TRUE) {
+		echo "Sucesso Ao Criar Tabela $tableName <br>";
+		} else {
+		echo "Error: " . $sqlTruncateTable . "<br>" . $conn->error;
+        }	
+        */
+}
+ 
  
 
 ?>

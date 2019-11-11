@@ -9,7 +9,7 @@
      <div class="list-group">
      <?php         
         
-        $formularios = ['Moto'=>'moto','Segurança'=>'seguranca','manutenção'=>'manutencao'];
+        $formularios = ['Moto'=>'moto','Segurança'=>'seguranca','manutenção'=>'manutencao','MPPS'=>'mpps'];
         foreach ($formularios as $key => $file){
         echo("<a href=\"./$file\" class=\"list-group-item list-group-item-action\">$key</a>");       
         }

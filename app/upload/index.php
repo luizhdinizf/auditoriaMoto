@@ -5,7 +5,7 @@ session_start();
 
 <html>
 <head>
-<?php header("Content-type: text/html; charset=utf-8"); ?>
+
   <title>PHP File Upload</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="/repo/bootstrap.min.css" />
