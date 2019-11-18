@@ -55,4 +55,5 @@ foreach($filledForms as $formRow)
 </table>
 <?php
 echo("<td><a href='choosePlace.php' class='btn btn-primary'>Voltar</a></td>");
+echo("<td><a href='downloadInfo.php?tableName=$tableName' class='btn btn-primary'>Baixar CSV</a></td>");
 ?>

@@ -49,6 +49,7 @@ if (($handle = fopen($fileTmpPath, "r")) !== FALSE) {
     $titulo = str_replace(' ', '_', $titulo);   
     $page = utf8_encode(geraWebpageString($titulo,$tipo,$perguntasArray,$tiposArray));
     $path='../'.$tipo.'/'.$titulo.'.html';
+    echo($path);
     $fp = fopen($path, 'w');
     fwrite($fp, $page);
     fclose($fp);

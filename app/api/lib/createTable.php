@@ -1,7 +1,7 @@
 <?php
 
-function insertOnAuditorias($conn, $tableName){
-	$sqlInsere = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', 'moto');";
+function insertOnAuditorias($conn, $tableName,$tipo){
+	$sqlInsere = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', '$tipo');";
 	if ($conn->query($sqlInsere) === TRUE) {
 		echo "Sucesso Ao Criar Tabela $tableName <br>";
 		} else {

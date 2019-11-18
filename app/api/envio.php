@@ -11,9 +11,11 @@ if(checkTableExistence($_POST['titulo'])) {
            
     }else{       
         createDataTable($_POST['titulo'],$_POST);   
+        insertOnAuditorias($conn, $_POST['titulo'],"mpps");
     }
 
 insertOnTable($conn, $_POST['titulo'], $_POST,$currentDate);
+
 //insertOnResultsTable($conn,  $_POST['titulo'], $_POST,$currentDate);
 
 #header('Location: ' . $_SERVER['HTTP_REFERER']);

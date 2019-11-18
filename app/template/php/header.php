@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Formulários Yazaki</title>
+    <title>Formularios Yazaki</title>
 
     <meta name="author" content="Luiz Henrique">
     
