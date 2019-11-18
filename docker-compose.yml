@@ -24,12 +24,6 @@ services:
     environment:
       - MYSQL_USER=root
       - MYSQL_PASS=123.456
-  python:
-    build:
-      context: ./python
-    volumes:
-      - "./app:/html"
-      - "./python/pyapp:/pyapp"
  
   # Data persistence service layer
   mysql:
