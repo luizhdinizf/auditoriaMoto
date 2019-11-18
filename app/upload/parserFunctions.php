@@ -33,6 +33,33 @@ function generateCheckMpps($title, $question) {
     return($page);
 }
 
+function generateCheckMoto($title, $question) {
+    $radios=['Ok','Na','Ng'];
+    $page = "<div \"class=form-group\">\n";
+    $page .= "<label for=\"$title\" class=\"col-md-4 control-label\">$question</label>\n";  
+    $page .= "<div \"class=col-md-4\">\n";
+     
+    foreach ($radios as $key => $value) {
+        $page .= "<label for=\"$title-$key\" class=\"radio-inline\">\n";
+        $page .= "<input type=\"radio\" name=\"$title\" id=\"$title-$key\" value=\"$value\" checked =\"checked\">";
+        $page .= $value;
+        $page.="</input>\n";
+        $page.="</label>\n";    
+    }
+        $page .= "<label for=\"$title-desc\" class=\"radio-inline\">\n";
+        $page .= "<input type=\"text\" name=\"$title-desc\" id=\"$title-desc\" placeholder=\"Comentario\" class=\"form-control input-md\">\n";
+        $page.="</label>\n";   
+  
+
+
+     $page .= "</div>\n";
+     $page .= "</div>\n";
+     $page .= "</br>\n"; 
+     $page .= "<hr>\n";  
+       
+    return($page);
+}
+
 
 
 function generate_subtitle($subtitle){  
@@ -73,7 +100,7 @@ function geraBody($titulo,$tipo,$perguntasArray,$tiposArray){
         $stringVar = "var".$c; 
         $tipoPergunta = $tiposArray[$c];
         if ($tipoPergunta == 'check_moto'){
-            $page.=generateCheckMpps($stringVar,$perguntasArray[$c]);
+            $page.=generateCheckMoto($stringVar,$perguntasArray[$c]);
             $perguntaAtual=$perguntasArray[$c];
             insertOnFieldsTable($tituloFormatado.'_fields',$stringVar,$perguntaAtual);
         }elseif ($tipoPergunta == 'check_mpps'){
