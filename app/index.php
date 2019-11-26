@@ -17,7 +17,7 @@
      ?>    
 
       </div>
-    <?php echo("<td><a href='/' class='btn btn-primary'>Voltar</a></td>");?>
+    <a class="btn btn-primary" href="http://brmtz-dev-001/admin" role="button">Voltar</a>
     <a class="btn btn-primary" href="../upload" role="button">Upload</a>
     <a class="btn btn-primary" href="api/choosePlace.php" role="button">Visualizar Resultados</a>
    

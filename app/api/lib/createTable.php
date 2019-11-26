@@ -1,13 +1,6 @@
 <?php
 
-function insertOnAuditorias($conn, $tableName,$tipo){
-	$sqlInsere = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', '$tipo');";
-	if ($conn->query($sqlInsere) === TRUE) {
-		echo "Sucesso Ao Criar Tabela $tableName <br>";
-		} else {
-		echo "Error: " . $sqlCreateTable . "<br>" . $conn->error;
-    }
-}
+
 
 function checkTableExistence($tableName) {
     global $conn;
@@ -29,9 +22,8 @@ function checkTableExistence($tableName) {
     
 
 }
-function createDataTable($tableName, $tableFields) {
-        global $conn;
-		insertOnAuditorias($conn, $tableName);
+function createDataTable($tableName, $tableFields) {  
+        global $conn;	
 		$sqlCreateTable = "CREATE TABLE `yazaki`.`";
 		$sqlCreateTable .= $tableName;
 		$sqlCreateTable .="` ( `id` INT(250) NOT NULL AUTO_INCREMENT,`data` DATETIME(5) NOT NULL,";
@@ -55,17 +47,14 @@ function createDataTable($tableName, $tableFields) {
 	
 	}  
  
-
- function inserIntotAuditorias($conne, $tableName) {
-    global $conn;   
-    $sqlInsertAuditorias = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', 'moto');";	
-		if ($conn->query($sqlInsertAuditorias ) === TRUE) {
-			echo "Sucesso Ao Criar Tabela $tableName <br>";
-			} else {
-			echo "Error: " . "ERRO" . "<br>" . $conn->error;
-			}
-
- }
+ function insertOnAuditorias($conn, $tableName,$tipo){
+	$sqlInsere = "INSERT INTO `auditorias` (`id`, `nome`, `tipo`) VALUES (NULL, '$tableName', '$tipo');";
+	if ($conn->query($sqlInsere) === TRUE) {
+		echo "Sucesso Ao Criar Tabela $tableName <br>";
+		} else {
+		echo "Error: " . $sqlCreateTable . "<br>" . $conn->error;
+    }
+}
 
  function createResultTable($conne, $tableName, $tableFields) {
     global $conn;   

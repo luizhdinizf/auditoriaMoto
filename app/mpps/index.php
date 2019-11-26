@@ -3,7 +3,7 @@
 
 
 
-  <body style="margin:0px;padding:0px;overflow:hidden">
+  <body style="margin:0px;padding:0px">
  
      <?php  include($_SERVER['DOCUMENT_ROOT']."/template/php/cabecalhoYazaki.php");?>
    
