@@ -45,7 +45,7 @@ body {
 	 var reloader = function() {
 		  location.reload(); 
           } 
-       setInterval(refresh, 30000);
+       setInterval(refresh, 300000);
        setInterval(reloader, 300000);
     }
     </script>

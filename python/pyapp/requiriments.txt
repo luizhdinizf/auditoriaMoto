@@ -1,4 +1,0 @@
-yattag
-unidecode
-reloadr
-mysql-connector-python

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PHP File Upload</title>
+</head>
+<body>
+  <h1>Envie um arquivo ".gif" que será mostrado no sistema, O raspberry leva em média 30 segundos para atualizar o arquivo</h1>
+  <form method="POST" action="upload.php" enctype="multipart/form-data">
+    <div>
+      <span>Upload a File:</span>
+      <input type="file" name="uploadedFile" />
+    </div>
+ 
+    <input type="submit" name="uploadBtn" value="Upload" />
+  </form>
+</body>
+</html>

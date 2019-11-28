@@ -11,7 +11,7 @@
         
         $formularios = ['Instruções Visuais'=>'http://brmtz-dev-001/TVLCD/ajudaVisual',
         'Reconhecimento Facial'=>'http://brmtz-dev-001:1880/ui',
-        'Gerenciamento Raspberys'=>'http://brmtz-dev-001:82',
+        'Gerenciamento Raspberrys'=>'http://brmtz-dev-001:82',
         'Formulários Automatizados'=>'http://brmtz-dev-001',
         'TV LCD TI'=>'http://brmtz-dev-001/TVLCD/TI',
         'TV LCD RH'=>'http://brmtz-dev-001/TVLCD/RH',

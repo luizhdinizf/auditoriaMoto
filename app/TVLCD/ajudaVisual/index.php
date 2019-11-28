@@ -15,10 +15,10 @@
      
      foreach (scandir('.') as $file){
       //$slicedFieldName = substr($file,-4);
-      if ($slicedFieldName == ""){
+      //if ($slicedFieldName == ""){
         echo("<a href=\"./$file\" class=\"list-group-item list-group-item-action\">$file</a>");
 
-      }
+     // }
      }
      
      ?>    

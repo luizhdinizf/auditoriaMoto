@@ -17,10 +17,12 @@ var refresh = function(logado) {
     cleansession = true;
     username = null;
     password = null;
-    topic = "RMTZ3047/logado";
+
+   
 	var mqtt;
     var reconnectTimeout = 2000;
-    function MQTTconnect() {
+    function MQTTconnect(hostname) {
+        topic = hostname+"/logado";
 	if (typeof path == "undefined") {
 		path = '/mqtt';
 	}

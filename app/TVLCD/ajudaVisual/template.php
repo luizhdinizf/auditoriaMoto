@@ -4,7 +4,7 @@
     
 <meta http-equiv="pragma" content="no-cache">
 <script src="/js/mqttws31.min.js"></script>
-<script src="./js/mqtt.js"></script>
+<script src="../js/mqtt.js"></script>
 
 <style>
 html {
@@ -30,14 +30,16 @@ body {
 
 </style>
   </head>
-<body onload="MQTTconnect("<?php echo $hostname; ?>")">
+<body>
  <a href="atualizar.html">
 <img src="uploaded_files/0.gif" class="skimage" id="s0">
 </a>
 
 <script>
     
-
+document.body.onload = function (event) {
+  MQTTconnect("<?php echo $hostname; ?>")
+}
 
     
 </script>
