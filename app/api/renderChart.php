@@ -3,7 +3,7 @@
 @include 'lib/view/viewer.php';
 include($_SERVER['DOCUMENT_ROOT']."/template/php/header.php");
 include($_SERVER['DOCUMENT_ROOT']."/template/php/cabecalhoYazaki.php");
-
+error_reporting(E_ERROR | E_PARSE);
 
 
 
