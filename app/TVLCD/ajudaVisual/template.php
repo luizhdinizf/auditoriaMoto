@@ -38,7 +38,8 @@ body {
 <script>
     
 document.body.onload = function (event) {
-  MQTTconnect("<?php echo $hostname; ?>")
+    hostname= "<?php echo $hostname; ?>";
+  MQTTconnect(hostname);
 }
 
     
